@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Taxi.Models.Comanda>
+@{
+    ViewData["Title"] = "Comenzi";
+}
+<style>
+    table, th, td {
+        border: 1px solid white;
+        margin-left:-110px;
+    }
+</style>
+
+<p>
+    @using (Html.BeginForm("Comenzi", "Comandas", FormMethod.Get))
+            {
+
+            }
+</p>
+
+<table class="table" style="color:wheat">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NrTelefon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CartierCurent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StradaCurenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DetaliiAdresaCurent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CartierDestinatie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StradaDestinatie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DetaliiAdresaDestinatie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nume)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NrTelefon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CartierCurent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StradaCurenta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DetaliiAdresaCurent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CartierDestinatie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StradaDestinatie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DetaliiAdresaDestinatie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ComandaId">Acceptare</a>
+                    </td>
+                
+            </tr>
+
+        }
+    </tbody>
+</table>

@@ -1,0 +1,92 @@
+﻿@model Taxi.Models.Comanda
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+    table, th, td {
+        border: 1px solid white;
+        margin-left: -110px;
+    }
+</style>
+
+
+<form asp-action="Create">
+    <table class="table" style="color:wheat">
+        <tr>
+            <th>
+                <div class="form-group">
+                    <label asp-for="Nume" class="control-label"></label>
+                    <input asp-for="Nume" class="form-control" />
+                    <span asp-validation-for="Nume" class="text-danger"></span>
+                </div>
+            </th>
+            <th>
+                <div class="form-group">
+                    <label asp-for="NrTelefon" class="control-label"></label>
+                    <input asp-for="NrTelefon" class="form-control" />
+                    <span asp-validation-for="NrTelefon" class="text-danger"></span>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <div class="form-group">
+                    <label asp-for="CartierCurent" class="control-label"></label>
+                    <input asp-for="CartierCurent" class="form-control" />
+                    <span asp-validation-for="CartierCurent" class="text-danger"></span>
+                </div>
+            </th>
+            <th>
+                <div class="form-group">
+                    <label asp-for="CartierDestinatie" class="control-label"></label>
+                    <input asp-for="CartierDestinatie" class="form-control" />
+                    <span asp-validation-for="CartierDestinatie" class="text-danger"></span>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <div class="form-group">
+                    <label asp-for="StradaCurenta" class="control-label"></label>
+                    <input asp-for="StradaCurenta" class="form-control" />
+                    <span asp-validation-for="StradaCurenta" class="text-danger"></span>
+                </div>
+            </th>
+            <th>
+                <div class="form-group">
+                    <label asp-for="StradaDestinatie" class="control-label"></label>
+                    <input asp-for="StradaDestinatie" class="form-control" />
+                    <span asp-validation-for="StradaDestinatie" class="text-danger"></span>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <div class="form-group">
+                    <label asp-for="DetaliiAdresaCurent" class="control-label"></label>
+                    <input asp-for="DetaliiAdresaCurent" class="form-control" />
+                    <span asp-validation-for="DetaliiAdresaCurent" class="text-danger"></span>
+                </div>
+            </th>
+            <th>
+                <div class="form-group">
+                    <label asp-for="DetaliiAdresaDestinatie" class="control-label"></label>
+                    <input asp-for="DetaliiAdresaDestinatie" class="form-control" />
+                    <span asp-validation-for="DetaliiAdresaDestinatie" class="text-danger"></span>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <div class="form-group">
+                    <input type="submit" value="Plasare Comanda" class="btn btn-primary" />
+                </div>
+            </th>
+        </tr>
+    </table>
+</form>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
